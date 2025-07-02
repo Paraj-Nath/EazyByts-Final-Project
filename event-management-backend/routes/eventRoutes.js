@@ -211,6 +211,8 @@ const getEventRecommendations = asyncHandler(async (req, res) => {
 
 
 // Route Definitions
+router.get('/recommendations', protect, getEventRecommendations);
+
 router.route('/')
   .get(getEvents)
   .post(protect, admin, upload.single('eventImage'), createEvent);
@@ -220,6 +222,5 @@ router.route('/:id')
   .put(protect, admin, upload.single('eventImage'), updateEvent)
   .delete(protect, admin, deleteEvent);
 
-router.get('/recommendations', protect, getEventRecommendations);
 
 module.exports = router;

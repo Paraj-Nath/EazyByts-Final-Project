@@ -9,6 +9,7 @@ function Header() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
+  console.log("Current User:", user); 
 
   const logoutHandler = () => {
     dispatch(logout());

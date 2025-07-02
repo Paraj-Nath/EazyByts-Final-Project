@@ -11,7 +11,7 @@ const getUserBookings = async (token) => {
       Authorization: `Bearer ${token}`,
     },
   };
-  const response = await axios.get(API_URL, config);
+  const response = await axios.get(`${API_URL}/mybookings`, config);
   return response.data;
 };
 
